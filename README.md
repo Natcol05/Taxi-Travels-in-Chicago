@@ -26,9 +26,9 @@ Also, for the analysis three different datasets were used:
 
 - <b>trips</b>: It shows the neighborhoods in Chicago where the trips ended and the average number of trips that concluded in each neighborhood in November 2017([Click Here](https://github.com/Natcol05/Taxi-Travels-in-Chicago/blob/c7bbf61ca37c6864e42e8207c3ed718dafef790f/moved_project_sql_result_04.csv))
 
-- <b>df</b>: df: This is a dataframe built using a small web scraping technique. It contains data about trips from the Loop to Chicago O'Hare International Airport, including the start date, weather conditions, and trip duration. Requests, Beautiful Soup, and Pandas were used for extracting information, while SQL was utilized for the aggregation of the information into one dataframe ([Click Here](https://github.com/Natcol05/Taxi-Travels-in-Chicago/blob/c7bbf61ca37c6864e42e8207c3ed718dafef790f/moved_project_sql_result_07.csv))
+- <b>df</b>: This is a dataframe built using a small web scraping technique. It contains data about trips from the Loop to Chicago O'Hare International Airport, including the start date, weather conditions, and trip duration. Requests, Beautiful Soup, and Pandas were used for extracting information, while SQL was utilized for the aggregation of the information into one dataframe ([Click Here](https://github.com/Natcol05/Taxi-Travels-in-Chicago/blob/c7bbf61ca37c6864e42e8207c3ed718dafef790f/moved_project_sql_result_07.csv))
 
-Here, I used Requests, Beautiful Soup, and Pandas to extract weather information for Chicago in 2017: 
+Here, I used Requests, Beautiful Soup, and Pandas to extract and create a dataframe named weather_records with the weather information for Chicago in 2017: 
 ```python
 
 import requests
@@ -71,3 +71,18 @@ WHERE
     pickup_location_id = 50 AND dropoff_location_id = 63 AND EXTRACT (DOW from trips.start_ts) = 6
 ORDER BY trip_id
 ```
+<b>After the analysis some of spects to highlight are:</b>
+
+1. Loop and River North are the neighborhoods with the highest concentration of destination trips, suggesting that they are quite popular areas in the city. However, Streeterville and West Loop, while having a considerably lower number of destination trips compared to the other 6 neighborhoods, are also noteworthy. It could be said that there is a significant concentration among these 4 mentioned neighborhoods compared to the others.
+
+<p align="center">
+  <img src="https://github.com/Natcol05/Taxi-Travels-in-Chicago/blob/610975a7883f3ad5a887e8df3e0dcd51b14ebba2/Graphics/Most_popular_neighborhoods.png" alt="Sample Image">
+</p>
+    
+2. The analysis reveals that Flash Cab stands out as the most popular company among the top 10, with a considerable concentration of trips compared to the others. While the remaining companies exhibit a downward trend, the decline appears to be more or less uniform across the board. This underscores the significant dominance of Flash Cab in the market.
+
+<p align="center">
+  <img src="https://github.com/Natcol05/Taxi-Travels-in-Chicago/blob/610975a7883f3ad5a887e8df3e0dcd51b14ebba2/Graphics/Most_popular_companies.png" alt="Sample Image">
+</p>
+
+ 
