@@ -85,4 +85,26 @@ ORDER BY trip_id
   <img src="https://github.com/Natcol05/Taxi-Travels-in-Chicago/blob/610975a7883f3ad5a887e8df3e0dcd51b14ebba2/Graphics/Most_popular_companies.png" alt="Sample Image">
 </p>
 
- 
+3. To assess whether the average duration of trips from the Loop to O'Hare International Airport differs on rainy Saturdays, we conducted a hypothesis test with the following hypotheses:
+
+<b>Null Hypothesis:</b> The average duration of trips is not different for rainy and non-rainy Saturdays.
+
+<b>Alternative Hypothesis:</b> The average duration of trips is different for rainy and non-rainy Saturdays.
+
+```SQL
+t_stat, p_value = ttest_ind(rainy_trips['duration_seconds'], non_rainy_trips['duration_seconds'], equal_var=True)
+alpha = 0.05
+
+print("Average trip duration on rainy days:", average_duration_rainy_days)
+print("Average trip duration on non-rainy days:", average_duration_non_rainy_days)
+print("P-value of the t-test:", p_value)
+
+if p_value < alpha:
+    print("The difference in average trip duration between rainy and non-rainy days is significant, \nso the null hypothesis is rejected.")
+else:
+    print("There is not enough evidence to conclude that the difference in average trip duration between rainy and non-rainy days is significant, \nso the null hypothesis is not rejected.")
+```
+    
+It's noteworthy that prior to hypothesis testing, we assessed the variance of the two datasets, set the equal_var parameter accordingly, and performed Levene's test. Further details on this procedure can be found in the complete project documentation
+
+
