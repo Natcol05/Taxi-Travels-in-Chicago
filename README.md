@@ -107,4 +107,10 @@ else:
     
 It's noteworthy that prior to hypothesis testing, we assessed the variance of the two datasets, set the equal_var parameter accordingly, and performed Levene's test. Further details on this procedure can be found in the complete project documentation
 
+**Main Conclusions:**
 
+1. **About the Most Popular Neighborhoods:** It can be observed that certain areas of the city concentrate a significant number of trips, presumably neighborhoods with attractions that become primary destinations. For example, according to internet searches, the Loop area in Chicago is the financial district, hosting multiple iconic landmarks, restaurants, bars, and theaters, making it the logical main destination. This explains the presence of extreme values in this dataset, as other neighborhoods not among the main destinations may primarily consist of residential areas, resulting in broader options for trip destinations and lower data concentration. However, this doesn't imply that there aren't residential neighborhoods with higher trip volumes than others, but not with as high a concentration as the top 4 destination neighborhoods.
+
+2. **About the Most Popular Companies:** Flash Cab stands out as the leading taxi company compared to others, although there are also extreme values. However, after this company, the decrease in trips per company is not as drastic.
+
+3. **Regarding the Hypothesis:** A difference was found in the average trip duration on rainy Saturdays compared to non-rainy Saturdays, which could also be attributed to increased traffic due to weather conditions.
